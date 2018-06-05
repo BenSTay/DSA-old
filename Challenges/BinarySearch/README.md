@@ -1,4 +1,4 @@
-# Reverse an Array
+# Binary Search
 Day 2 whiteboard challenge.  
 **Whiteboarding partners**: Anthony Green & Jimmy Chang.
 
