@@ -3,7 +3,10 @@
 **Version**: 1.0.0
 
 ## Overview
-An implementation of a Linked List. Note: currently, nodes can only be added to the Linked List.
+A Linked List is a data structure consisting of one or more Nodes, each containing a value and a reference to the next node on the list. The Linked List contains references to the node at the front of the list and the current node (this is used for navigating the list).
+TODO: ADD IMAGE
+TODO: HOW I DID THIS
+TODO: WHY WOULD YOU WANT TO USE A LINKED LIST
 
 ## Getting Started
 1. Create a fork of this repository, and clone your fork to your device.  
