@@ -1,5 +1,5 @@
 # Kth Element
-Whiteboard Challenge #7
+Whiteboard Challenge #7  
 **Whiteboarding partners**: Earl Jay & Jackie Ly.
 
 ## Challenge
