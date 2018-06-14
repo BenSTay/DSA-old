@@ -123,5 +123,27 @@ namespace LinkedLists.Classes
             Current.Next = node;
         }
 
+        /// <summary>
+        /// Finds the node that is k nodes from the end of the list.
+        /// </summary>
+        /// <param name="k">The distance from the end of the list.</param>
+        /// <returns>The node that is k nodes from the end of the list.</returns>
+        public Node KthElement(int k)
+        {
+            Current = Head;
+            int counter = 0;
+            Node runner = Head;
+            while(Current.Next != null)
+            {
+                Current = Current.Next;
+                counter++;
+                if (counter > k)
+                {
+                    runner = runner.Next;
+                }
+            }
+            if (k > counter) throw new IndexOutOfRangeException("K is greater than the length of the list!");
+            else return runner;
+        }
     }
 }
