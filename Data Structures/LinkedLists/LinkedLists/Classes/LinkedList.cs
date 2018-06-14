@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LinkedLists.Classes
 {
@@ -16,7 +14,6 @@ namespace LinkedLists.Classes
         public LinkedList(Node node)
         {
             Head = node;
-            Current = node;
         }
         
         /// <summary>
@@ -57,7 +54,7 @@ namespace LinkedLists.Classes
                 Console.Write($"{Current.Value} --> ");
                 Current = Current.Next;
             }
-            Console.Write($"{Current.Value} --> NULL");
+            Console.Write($"{Current.Value} --> NULL\n");
         }
 
         /// <summary>

@@ -1,5 +1,4 @@
 using LinkedLists.Classes;
-using System;
 using Xunit;
 
 namespace LinkedListTests
