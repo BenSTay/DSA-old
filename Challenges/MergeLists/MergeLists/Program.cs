@@ -1,11 +1,11 @@
 ﻿using LinkedLists.Classes;
 using System;
 
-namespace LinkedLists
+namespace MergeLists
 {
-    class Program
+    public class Program
     {
-        static LinkedList MergeLists(LinkedList list1, LinkedList list2)
+        public static Node MergeLists(LinkedList list1, LinkedList list2)
         {
             Node temp;
             list1.Current = list1.Head;
@@ -21,9 +21,9 @@ namespace LinkedLists
             {
                 list1.Current.Next = list2.Head;
             }
-            return list1;
+            return list1.Head;
         }
-        
+
         static void TestMerge()
         {
             LinkedList list1 = new LinkedList(new Node(0));
@@ -32,16 +32,17 @@ namespace LinkedLists
             list2.AddLast(new Node(3));
             list1.AddLast(new Node(4));
             list2.AddLast(new Node(5));
+            Console.WriteLine("Input:");
             list1.Print();
             list2.Print();
-            MergeLists(list1, list2).Print();
+            list2.Head = MergeLists(list1, list2);
+            Console.WriteLine("\nOutput:");
+            list2.Print();
         }
-
         static void Main(string[] args)
         {
             TestMerge();
             Console.ReadKey();
-
         }
     }
 }
