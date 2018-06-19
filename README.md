@@ -9,3 +9,4 @@ Repository for Code Fellows .NET data structures &amp; algorithms assignments.
 5. [Kth Element](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/KthElement)
 6. [Merge Lists](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/MergeLists)
 7. [Stack and Queue](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Stack%20and%20Queue)
+8. [Queue With Stacks](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/QueueWithStacks)
