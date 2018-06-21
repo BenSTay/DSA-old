@@ -1,5 +1,5 @@
 # Multi-Bracket Validation
-Whiteboard Challenge for Day #13
+Whiteboard Challenge for Day #13  
 **Whiteboarding partners**: Jesse Atay & Judah Hunger
 
 ## Challenge
