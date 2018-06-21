@@ -11,3 +11,4 @@ Repository for Code Fellows .NET data structures &amp; algorithms assignments.
 7. [Stack and Queue](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Stack%20and%20Queue)
 8. [Queue With Stacks](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/QueueWithStacks)
 9. [Animal Shelter](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/FIFOAnimalShelter)
+10. [Multi-Bracket Validation](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/MultiBracketValidation)
