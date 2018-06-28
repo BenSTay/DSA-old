@@ -4,16 +4,16 @@ using System.Text;
 
 namespace Trees.Classes
 {
-    public abstract class Tree
+    public abstract class Tree<T>
     {
-        protected Node Root { get; set; }
+        public Node<T> Root { get; set; }
 
         public void PreOrder()
         {
             PreOrder(Root);
         }
 
-        protected void PreOrder(Node node)
+        protected void PreOrder(Node<T> node)
         {
             Console.Write(node.Value);
 
@@ -33,7 +33,7 @@ namespace Trees.Classes
             InOrder(Root);
         }
 
-        protected void InOrder(Node node)
+        protected void InOrder(Node<T> node)
         {
             if (node.LeftChild != null)
             {
@@ -53,7 +53,7 @@ namespace Trees.Classes
             PostOrder(Root);
         }
 
-        protected void PostOrder(Node node)
+        protected void PostOrder(Node<T> node)
         {
             if (node.LeftChild != null)
             {
@@ -73,14 +73,14 @@ namespace Trees.Classes
             BreadthFirst(Root);
         }
 
-        protected void BreadthFirst(Node root)
+        protected void BreadthFirst(Node<T> root)
         {
-            Queue<Node> breadth = new Queue<Node>();
+            Queue<Node<T>> breadth = new Queue<Node<T>>();
             breadth.Enqueue(root);
 
             while (breadth.TryPeek(out root))
             {
-                Node front = breadth.Dequeue();
+                Node<T> front = breadth.Dequeue();
                 Console.Write(front.Value);
 
                 if (front.LeftChild != null)
@@ -94,8 +94,8 @@ namespace Trees.Classes
             }
         }
 
-        abstract public void Add(Node node);
-        abstract public Node Search(int value);
-        abstract protected Node Search(Node root, int value);
+        abstract public void Add(Node<T> node);
+        abstract public Node<T> Search(T value);
+        abstract protected Node<T> Search(Node<T> root, T value);
     }
 }
