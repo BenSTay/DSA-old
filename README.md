@@ -13,3 +13,4 @@ Repository for Code Fellows .NET data structures &amp; algorithms assignments.
 9. [Animal Shelter](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/FIFOAnimalShelter)
 10. [Multi-Bracket Validation](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/MultiBracketValidation)
 11. [Binary Tree](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Trees)
+12. [FizzBuzz Tree](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/FizzBuzzTree)

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace Trees.Classes
 {
-    public class BinaryTree : Tree
+    public class BinaryTree<T> : Tree<T> where T : class
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="root"></param>
-        public BinaryTree(Node root)
+        public BinaryTree(Node<T> root)
         {
             Root = root;
         }
@@ -20,14 +20,14 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        protected Node GetNode(Node root)
+        protected Node<T> GetNode(Node<T> root)
         {
-            Queue<Node> breadth = new Queue<Node>();
+            Queue<Node<T>> breadth = new Queue<Node<T>>();
             breadth.Enqueue(root);
 
             while (breadth.TryPeek(out root))
             {
-                Node front = breadth.Dequeue();
+                Node<T> front = breadth.Dequeue();
 
                 if (front.LeftChild != null)
                 {
@@ -47,9 +47,9 @@ namespace Trees.Classes
         /// 
         /// </summary>
         /// <param name="node"></param>
-        public override void Add(Node node)
+        public override void Add(Node<T> node)
         {
-            Node parent = GetNode(Root);
+            Node<T> parent = GetNode(Root);
             if (parent.LeftChild == null) parent.LeftChild = node;
             else parent.RightChild = node;
         }
@@ -59,7 +59,7 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="node"></param>
         /// <param name="parent"></param>
-        public void Add(Node node, Node parent)
+        public void Add(Node<T> node, Node<T> parent)
         {
             if (parent.LeftChild == null)
             {
@@ -79,7 +79,7 @@ namespace Trees.Classes
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public override Node Search(int value)
+        public override Node<T> Search(T value)
         {
             return Search(Root, value);
         }
@@ -90,16 +90,16 @@ namespace Trees.Classes
         /// <param name="root"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        protected override Node Search(Node root, int value)
+        protected override Node<T> Search(Node<T> root, T value)
         {
-            Queue<Node> breadth = new Queue<Node>();
+            Queue<Node<T>> breadth = new Queue<Node<T>>();
             breadth.Enqueue(root);
 
             while (breadth.TryPeek(out root))
             {
-                Node front = breadth.Dequeue();
+                Node<T> front = breadth.Dequeue();
 
-                if (front.Value == value) return front;
+                if (front.Value.Equals(value)) return front;
 
                 if (front.LeftChild != null)
                 {
