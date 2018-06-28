@@ -15,7 +15,7 @@ namespace Trees.Classes
 
         protected void PreOrder(Node<T> node)
         {
-            Console.Write(node.Value);
+            Console.WriteLine(node.Value);
 
             if (node.LeftChild != null)
             {
@@ -40,7 +40,7 @@ namespace Trees.Classes
                 InOrder(node.LeftChild);
             }
 
-            Console.Write(node.Value);
+            Console.WriteLine(node.Value);
 
             if (node.RightChild != null)
             {
@@ -65,7 +65,7 @@ namespace Trees.Classes
                 PostOrder(node.RightChild);
             }
 
-            Console.Write(node.Value);
+            Console.WriteLine(node.Value);
         }
 
         public void BreadthFirst()
@@ -81,7 +81,7 @@ namespace Trees.Classes
             while (breadth.TryPeek(out root))
             {
                 Node<T> front = breadth.Dequeue();
-                Console.Write(front.Value);
+                Console.WriteLine(front.Value);
 
                 if (front.LeftChild != null)
                 {
