@@ -7,8 +7,8 @@ namespace Graphs.Classes
     public class Node<T>
     {
         public T Value { get; set; }
-        public List<Node<T>> Children { get; set; }
-        public bool Visited { get; set; }
+        public List<Edge<T>> Neighbors { get; set; }
+        public bool Visited { get; set; } = false;
 
         /// <summary>
         /// Creates a new instance of the Node class.
@@ -17,7 +17,7 @@ namespace Graphs.Classes
         public Node(T value)
         {
             Value = value;
-            Children = new List<Node<T>>();
+            Neighbors = new List<Edge<T>>();
         }
 
     }

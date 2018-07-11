@@ -8,15 +8,18 @@ namespace Graphs
         static void Main(string[] args)
         {
             //Creates a graph
-            Graph<string> graph = new Graph<string>(new Node<string>("A"));
+            Graph<string> graph = new Graph<string>();
+            graph.AddEdge(new Node<string>("A"));
 
             //Prepares nodes to be added to the graph
             Node<string> node2 = new Node<string>("B");
-            node2.Children.Add(new Node<string>("C"));
-            node2.Children.Add(graph.GetNodes()[0]);
+            node2.Neighbors.Add(new Edge<string>(new Node<string>("C")));
+            node2.Neighbors.Add(new Edge<string>(graph.GetNodes()[0]));
 
             //Adds the new nodes to the graph
+            graph.AddEdge(node2.Neighbors[0].Node);
             graph.AddEdge(node2);
+            
 
             //Displays the number of nodes in the graph, and then displays the graph as
             //an adjacency list.
