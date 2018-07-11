@@ -6,16 +6,15 @@ namespace Graphs.Classes
 {
     public class Graph<T>
     {
-        protected List<Node<T>> AdjacencyList { get; set; }
+        protected List<Node<T>> Vertices { get; set; }
 
         /// <summary>
         /// Creates a new instance of the Graph class.
         /// </summary>
         /// <param name="node">The first node in the Graph.</param>
-        public Graph(Node<T> node)
+        public Graph()
         {
-            AdjacencyList = new List<Node<T>>();
-            AddEdge(node);
+            Vertices = new List<Node<T>>();
         }
 
         /// <summary>
@@ -24,21 +23,19 @@ namespace Graphs.Classes
         /// <param name="node">The node being added.</param>
         public void AddEdge(Node<T> node)
         {
-            if (AdjacencyList.Find(vertex => vertex.Value.Equals(node.Value)) != null)
+            if (Vertices.Find(vertex => vertex.Value.Equals(node.Value)) != null)
             {
                 throw new ArgumentException("This vertex is already in this graph!");
             }
 
-            AdjacencyList.Add(node);
-            foreach(Node<T> child in node.Children)
+            Vertices.Add(node);
+            foreach(Edge<T> edge in node.Neighbors)
             {
-                Node<T> matchingNode = AdjacencyList.Find(vertex => vertex.Value.Equals(child.Value));
-                if (matchingNode != null) matchingNode.Children.Add(node);
-                else
-                {
-                    if (!child.Children.Contains(node)) child.Children.Add(node);
-                    AdjacencyList.Add(child);
-                }
+                //Finds the node in the graph with a value that matches the edges node, if any.
+                Node<T> matchingNode = Vertices.Find(vertex => vertex.Value.Equals(edge.Node.Value));
+
+                //If a matching node is found, the new node is added to its list of neighbors.
+                if (matchingNode != null) matchingNode.Neighbors.Add(new Edge<T>(node, edge.Weight));
             }
         }
 
@@ -48,7 +45,7 @@ namespace Graphs.Classes
         /// <returns>A list of nodes.</returns>
         public List<Node<T>> GetNodes()
         {
-            return AdjacencyList;
+            return Vertices;
         }
 
         /// <summary>
@@ -58,7 +55,12 @@ namespace Graphs.Classes
         /// <returns>A list of nodes.</returns>
         public List<Node<T>> GetNeighbors(Node<T> node)
         {
-            return node.Children;
+            List<Node<T>> neighbors = new List<Node<T>>();
+            foreach (Edge<T> edge in node.Neighbors)
+            {
+                neighbors.Add(edge.Node);
+            }
+            return neighbors;
         }
 
         /// <summary>
@@ -67,7 +69,7 @@ namespace Graphs.Classes
         /// <returns>An integer representing the number of nodes in the Graph.</returns>
         public int Size()
         {
-            return AdjacencyList.Count;
+            return Vertices.Count;
         }
 
         /// <summary>
@@ -77,7 +79,7 @@ namespace Graphs.Classes
         /// <returns>A list of nodes.</returns>
         public List<Node<T>> BreadthFirst(Node<T> root)
         {
-            foreach (Node<T> node in AdjacencyList)
+            foreach (Node<T> node in Vertices)
             {
                 node.Visited = false;
             }
@@ -91,11 +93,11 @@ namespace Graphs.Classes
                 order.Add(root);
                 root.Visited = true;
 
-                foreach(Node<T> child in root.Children)
+                foreach(Edge<T> edge in root.Neighbors)
                 {
-                    if (!child.Visited)
+                    if (!edge.Node.Visited)
                     {
-                        breadth.Enqueue(child);
+                        breadth.Enqueue(edge.Node);
                     }
                 }
             }

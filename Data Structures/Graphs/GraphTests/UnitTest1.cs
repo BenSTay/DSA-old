@@ -1,6 +1,7 @@
 using System;
 using Xunit;
 using Graphs.Classes;
+using System.Collections.Generic;
 
 namespace GraphTests
 {
@@ -9,7 +10,8 @@ namespace GraphTests
         [Fact]
         public void TestSize()
         {
-            Graph<string> graph = new Graph<string>(new Node<string>("A"));
+            Graph<string> graph = new Graph<string>();
+            graph.AddEdge(new Node<string>("A"));
             Assert.Equal(1, graph.Size());
         }
 
@@ -17,15 +19,23 @@ namespace GraphTests
         public void TestGetNeighbors()
         {
             Node<string> node = new Node<string>("A");
-            node.Children.Add(new Node<string>("B"));
-            Graph<string> graph = new Graph<string>(node);
-            Assert.Equal(node.Children, graph.GetNeighbors(node));
+            node.Neighbors.Add(new Edge<string>(new Node<string>("B")));
+            Graph<string> graph = new Graph<string>();
+            graph.AddEdge(node);
+            List<Node<string>> nodes = new List<Node<string>>();
+            foreach (Edge<string> edge in node.Neighbors)
+            {
+                nodes.Add(edge.Node);
+            }
+            
+            Assert.Equal(nodes, graph.GetNeighbors(node));
         }
 
         [Fact]
         public void TestAddEdge()
         {
-            Graph<string> graph = new Graph<string>(new Node<string>("A"));
+            Graph<string> graph = new Graph<string>();
+            graph.AddEdge(new Node<string>("A"));
             graph.AddEdge(new Node<string>("B"));
             Assert.Equal(2, graph.Size());
         }
