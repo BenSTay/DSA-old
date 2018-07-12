@@ -42,6 +42,9 @@ namespace Graphs
             {
                 Console.Write(node.Value);
             }
+
+            graph.GetMatrix();
+
             Console.ReadKey();
         }
     }

@@ -87,22 +87,38 @@ namespace Graphs.Classes
             List<Node<T>> order = new List<Node<T>>();
             Queue<Node<T>> breadth = new Queue<Node<T>>();
             breadth.Enqueue(root);
+            root.Visited = true;
 
             while (breadth.TryDequeue(out root))
             {
                 order.Add(root);
-                root.Visited = true;
 
                 foreach(Edge<T> edge in root.Neighbors)
                 {
                     if (!edge.Node.Visited)
                     {
+                        edge.Node.Visited = true;
                         breadth.Enqueue(edge.Node);
                     }
                 }
             }
 
             return order;
+        }
+
+        public bool[,] GetMatrix()
+        {
+            int count = Vertices.Count;
+            bool[,] matrix = new bool[count, count];
+            for (int i = 0; i < count; i++)
+            {
+                foreach (Node<T> neighbor in GetNeighbors(Vertices[i]))
+                {
+                    int j = Vertices.IndexOf(neighbor);
+                    matrix[i, j] = true;
+                }
+            }
+            return matrix;
         }
     }
 }

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindIslands", "FindIslands\FindIslands.csproj", "{1F1FCCEB-0A55-4281-B293-FF53045C013A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFindIslands", "TestFindIslands\TestFindIslands.csproj", "{56AB4951-6A48-4ECD-8EEF-3FD7EF6B0C0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F1FCCEB-0A55-4281-B293-FF53045C013A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1FCCEB-0A55-4281-B293-FF53045C013A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1FCCEB-0A55-4281-B293-FF53045C013A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1FCCEB-0A55-4281-B293-FF53045C013A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56AB4951-6A48-4ECD-8EEF-3FD7EF6B0C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AB4951-6A48-4ECD-8EEF-3FD7EF6B0C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AB4951-6A48-4ECD-8EEF-3FD7EF6B0C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AB4951-6A48-4ECD-8EEF-3FD7EF6B0C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E7148A7-4299-4697-8E3E-4F84CDC9BC10}
+	EndGlobalSection
+EndGlobal
