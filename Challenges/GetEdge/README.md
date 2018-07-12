@@ -1,4 +1,4 @@
-# Merge Lists
+# Get Edge
 Class 27 Whiteboard Challenge
 **Whiteboarding partner**: Mario Nishio
 
