@@ -18,3 +18,4 @@ Repository for Code Fellows .NET data structures &amp; algorithms assignments.
 14. [Graph](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Graphs)
 15. [Get Edge](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/GetEdge)
 16. [Find Islands](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/FindIslands)
+17. [Hashtable](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Hashtables)
