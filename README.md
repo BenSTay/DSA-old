@@ -20,3 +20,4 @@ Repository for Code Fellows .NET data structures &amp; algorithms assignments.
 16. [Find Islands](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/FindIslands)
 17. [Hashtable](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Data%20Structures/Hashtables)
 18. [Repeated Word](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/RepeatedWord)
+19. [Tree Intersection](https://github.com/btaylor93/Data-Structures-and-Algorithms/tree/master/Challenges/TreeIntersection)
